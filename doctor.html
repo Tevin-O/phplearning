@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>Registration Form</title>
+   <link rel="stylesheet" type="text/css" href="doctor.css">
+   </head> 
+   <body>
+    <div class="registration-form">
+        <h1>Doctors Registration</h1>
+        <form action="adddoctor.php" method="post">
+             <p>Doctors Ssn</p>
+             <input type="text" name="doctorsid" placeholder="Doctors Ssn">
+             <p>Doctors Name</p>
+             <input type="text" name="doctorsname" placeholder="Doctors Name">
+             <p>Specialty</p>
+             <input type="text" name="doctorsspecialty" placeholder="Specialty">
+             <p>Years Of Experience</p>
+             <input type="number" name="yearsofexperience" placeholder="YearsOfExperience">
+             <button type="submit">Register</button>
+        </form>
+    </div>
+   </body>
+</html>
