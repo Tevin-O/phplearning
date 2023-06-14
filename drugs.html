@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>Registration Form</title>
+   <link rel="stylesheet" type="text/css" href="drugs.css">
+   </head> 
+   <body>
+    <div class="registration-form">
+        <h1>Drug Registration</h1>
+        <form action="adddrugs.php" method="post">
+             <p>Trade Name</p>
+             <input type="text" name="tradename" placeholder="TradeName">
+             <p>Formula</p>
+             <input type="text" name="formula" placeholder="Formula">
+             <p>Price</p>
+             <input type="text" name="text" placeholder="Price">
+             <p>Quantity</p>
+             <input type="text" name="quantity" placeholder="Quantity">
+             <p>Company Name</p>
+             <input type="text" name="companyname" placeholder="CompanyName">
+             <p>Manufacture Date</p>
+             <input type="date" name="manufacturedate" placeholder="ManufactureDate">
+             <p>Expiry Date</p>
+             <input type="date" name="expirydate" placeholder="ExpiryDate">
+             <button type="submit">Register</button>
+        </form>
+    </div>
+   </body>
+</html>

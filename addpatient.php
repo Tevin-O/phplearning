@@ -1,5 +1,6 @@
 <?php
-require_once("conection.php");
+require_once("config/conection.php");
+
 
 // Establish database connection
 
@@ -15,7 +16,7 @@ $patient_dob = $_POST['patientdob'];
 $address = $_POST['address']; 
 $city = $_POST['city'];
 $sickness = $_POST['sickness'];
-$phone_no = $_POST['phoneno'];
+$phone_no = $_POST['phoneno'];  
 $email = $_POST['email'];
 
 
@@ -32,6 +33,20 @@ if ($conn->connect_error){
     // Finally execute the query
     $sql->execute();
     echo "Registration Successful";
+
+    /*
+    // Display what we have input
+
+    $sql2 = "SELECT * FROM patients";
+
+    $results = $conn->query($sql2);
+
+    $row = $results->fetch_assoc();
+
+    print_r($row);
+    
+    */
+
 
     // Close the connection and execution
 

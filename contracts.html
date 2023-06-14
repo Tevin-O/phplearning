@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>Registration Form</title>
+   <link rel="stylesheet" type="text/css" href="">
+   </head> 
+   <body>
+    <div class="registration-form">
+        <h1>Contracts Registration</h1>
+        <form action="addcontracts.php" method="post">
+             <p>Contract ID</p>
+             <input type="text" name="contractid" placeholder="ContractID">
+             <p>Start Date</p>
+             <input type="date" name="startdate" placeholder="StartDate">
+             <p>End Date</p>
+             <input type="date" name="enddate" placeholder="EndDate">
+             <p>Pharmacy ID</p>
+             <input type="text" name="pharmacyid" placeholder="PharmacyID">
+             <p>Company ID</p>
+             <input type="text" name="companyid" placeholder="CompanyID">
+             <button type="submit">Register</button>
+        </form>
+    </div>
+   </body>
+</html>

@@ -1,39 +1,45 @@
 <?php
+ 
+ require_once("config/conection.php");
+
+ // Establish database connection
+ 
+ $conn = new mysqli($servername, $username, $password, $database);
+ 
+ // Post method takes input from user using php and places it in database
+ //Reference to it in the method of a form in the html file whats inside the parameters is the name of the input.
+ // We need to refer to it so that it can work 
+ 
+ $pharmacy_name = $_POST['pharmacyname'];
+ $address = $_POST['address'];
+ $phone_no = $_POST['phoneno'];
+ $inventory = $_POST['inventory']; 
+ $price_of_drug = $_POST['priceofdrug'];
+ $pharmacy_id = $_POST['pharmacyid'];
+ 
+ 
+ 
+ 
+ 
+ if ($conn->connect_error){
+     die('Connection Failed :' .$conn->connect_error);
+ }else {
+     $sql = $conn->prepare("insert into pharmacy(Name,Address,PhoneNo,Inventory,PriceOfDrug,PharmcyId)values(? , ? , ? , ? ,? , ?)");
+     
+     // Bind question marks with proper data
+     //Only have 4 data types for binding int,string,double,blob written as i,s,d,b
+     //After pass variablenames for the binding
+     $sql->bind_param("ssisss",$pharmacy_name,$address,$phone_no,$inventory,$price_of_drug,$pharmacy_id);
+ 
+     // Finally execute the query
+     $sql->execute();
+     echo "Registration Successful";
+ 
+     // Close the connection and execution
+ 
+     $sql->close();
+     $conn->close();
+ }
 
 
-require_once("conection.php");
-
-// Establish database connection
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-$trade_name = "PainKiller";
-$drug_formula = "PK";
-$drug_price = "100Ksh";
-$drug_quantity = "100g";
-$company_name ="MedicoLtd";
-$manufacture_date = 2020-04-13;
-$expiry_date = 2025-04-13;
-
-$sql = "INSERT INTO drugs (Trade_Name,formula,price,Quantity,Company_Name,Manufacture_Date,Expiry_Date)
-Values ('$trade_name','$drug_formula','$drug_price', '$drug_quantity','$company_name','$manufacture_date','$expiry_date')";
-
-if ($conn->query($sql) === TRUE){
-    echo "New record created succcessfully";
-}else {
-    echo "Error:" .$sql  . "<br>". $conn->error;
-}
-
-/*
-// sql to delete a record
-$sql = "DELETE FROM drugs ";
-
-if (mysqli_query($conn, $sql)) {
-  echo "Record deleted successfully";
-} else {
-  echo "Error deleting record: " . mysqli_error($conn);
-}
-*/
-
-$conn->close();
 ?> 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>Registration Form</title>
+   <link rel="stylesheet" type="text/css" href="">
+   </head> 
+   <body>
+    <div class="registration-form">
+        <h1>Prescription Registration</h1>
+        <form action="addprescriptions.php" method="post">
+             <p>Prescription ID</p>
+             <input type="text" name="prescriptionid" placeholder="Prescription ID" >
+             <p>Description</p>
+             <input type="text" name="description" placeholder="Description">
+             <p>Patient Ssn</p>
+             <input type="text" name="patientssn" placeholder="Patient Ssn">
+             <p>DoctorSsn</p>
+             <input type="text" name="doctorssn" placeholder="Doctor Ssn">
+             <button type="submit">Register</button>
+        </form>
+    </div>
+   </body>
+</html>
