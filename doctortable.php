@@ -13,6 +13,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch Data From DataBase In Php </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script>
+    // Function to handle edit button click
+    function editRecord(DoctorSsn) {
+        // Redirect to the edit page with the selected record's SSN
+        window.location.href = 'edit.php?DoctorSsn=' + DoctorSsn;
+    }
+
+    // Function to handle delete button click
+    function deleteRecord(DoctorSsn) {
+        if (confirm('Are you sure you want to delete this record?')) {
+            // Redirect to the delete page with the selected record's SSN
+            window.location.href = 'delete.php?DoctorSsn=' + DoctorSsn;
+        }
+    }
+    </script>
+
 </head>
 <body class=" bg-dark">
     <div class="container">
@@ -29,6 +46,8 @@
                             <td>Doctors Name</td>
                             <td>Specialty</td>
                             <td>Years Of Experience</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
                         </tr>
                         <tr>
                             <?php
@@ -39,6 +58,8 @@
                                         <td><?php echo $row['DoctorName'] ?></td>
                                         <td><?php echo $row['Specialty'] ?></td>
                                         <td><?php echo $row['YearsOfExperience'] ?></td>
+                                        <td><a href="edit.php?DoctorSsn=100D" class="btn btn-primary"  onclick="editRecord('<?php echo $row['DoctorSsn'] ?>')">Edit</a></td>
+                                        <td><a href="delete.php" class="btn btn-danger" onclick="deleteRecord('<?php echo $row['DoctorSsn'] ?>')">Delete</a></td>
 
                         </tr>
                                     <?php
