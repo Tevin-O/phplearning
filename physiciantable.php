@@ -1,8 +1,8 @@
 <?php 
  
  require("conection.php");
- require("config/function.php");
- $result = display_data();
+ $query = "select * from physician";
+ $result = mysqli_query($conn,$query);
 ?>
 
 <!DOCTYPE html>
@@ -25,20 +25,19 @@
                      <div class="card-body">
                         <table class="table table-bordered text-center">
                         <tr class="bg-dark text-white">
-                            <td>Doctors Ssn</td>
-                            <td>Doctors Name</td>
-                            <td>Specialty</td>
-                            <td>Years Of Experience</td>
+                            <td>Physician Ssn</td>
+                            <td>Physician Name</td>
+                            <td>Phone No</td>
+                          
                         </tr>
                         <tr>
                             <?php
                                while ($row = mysqli_fetch_assoc($result))
                                {
                                     ?>
-                                        <td><?php echo $row['DoctorSsn'] ?></td>
-                                        <td><?php echo $row['DoctorName'] ?></td>
-                                        <td><?php echo $row['Specialty'] ?></td>
-                                        <td><?php echo $row['YearsOfExperience'] ?></td>
+                                        <td><?php echo $row['PhysicianSsn'] ?></td>
+                                        <td><?php echo $row['PhysicianName'] ?></td>
+                                        <td><?php echo $row['PhysicianPhoneNo'] ?></td>
 
                         </tr>
                                     <?php

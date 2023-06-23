@@ -1,7 +1,7 @@
 <?php
 
 
-require("config/conection.php");
+require("conection.php");
 
 // Establish database connection
 

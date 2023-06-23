@@ -1,6 +1,6 @@
 <?php
 
-require_once("config/conection.php");
+require_once("conection.php");
 
 // Establish database connection
 
