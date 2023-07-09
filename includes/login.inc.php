@@ -1,10 +1,10 @@
 <?php
-
+/*
 if(isset($_POST["submit-login"])){
 $ssn = $_POST["ssn"];
 $pwd = $_POST["pwd"];
 
-require_once("../conection.php");
+require_once("../config/conection.php");
 require_once("functions.inc.php");
 
 if (emptyInputLogin($ssn,$pwd)) {

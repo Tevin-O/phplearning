@@ -1,5 +1,5 @@
   <?php
-
+/*
 if (isset($_POST["signup-submit"])) {
   echo "it works";
 
@@ -11,7 +11,7 @@ if (isset($_POST["signup-submit"])) {
   $passwordRepeat = $_POST["pwdrepeat"];
 
   // Error handling to catch any errors user might make when registering
-  require_once("../conection.php");
+  require_once("../config/conection.php");
   require_once("functions.inc.php");
 
  // var_dump($name, $email, $ssn, $phoneno, $password, $passwordRepeat);

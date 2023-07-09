@@ -1,4 +1,5 @@
-
+<?php 
+/*
 function emptyInputSignUp($name,$email,$ssn,$phoneno,$password,$passwordRepeat) {
     
     // The variable stores the value of true or false when the function runs

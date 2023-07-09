@@ -1,0 +1,18 @@
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+input[type="text"], input[type="password"], select {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
