@@ -2,7 +2,7 @@
 session_start(); // Add this line to start the session
 
 // Ensure the user is logged in
-if (!isset($_SESSION['userssn']) || !isset($_SESSION['usertype'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['usertype'])) {
     header("Location: login.php"); // Redirect to the login page if not logged in
     exit();
 }
@@ -16,7 +16,7 @@ if (!isset($_SESSION['userssn']) || !isset($_SESSION['usertype'])) {
 </head>
 <body>
     <div class="container">
-        <h2>Welcome, <?php echo $_SESSION['userssn']; ?> (Supervisor)</h2>
+        <h2>Welcome, <?php echo $_SESSION['username']; ?> (Supervisor)</h2>
         
         <!-- Supervisor-specific content here -->
         

@@ -2,7 +2,7 @@
 session_start(); // Add this line to start the session
 
 // Ensure the user is logged in
-if (!isset($_SESSION['userssn']) || !isset($_SESSION['usertype'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['usertype'])) {
     header("Location: login.php"); // Redirect to the login page if not logged in
     exit();
 }
@@ -16,25 +16,16 @@ if (!isset($_SESSION['userssn']) || !isset($_SESSION['usertype'])) {
 </head>
 <body>
     <div class="container">
-        <h2>Welcome, <?php echo $_SESSION['userssn']; ?> (Pharmacist)</h2>
+        <h2>Welcome, <?php echo $_SESSION['username']; ?> (Pharmacist)</h2>
 
-        <h3>Prescribe Drugs</h3>
-        <!-- Prescription form -->
-        <form action="prescribe_drugs.php" method="POST">
-            <label for="prescriptionid">Prescription Id:</label>
-            <input type="text" id="prescriptionid" name="prescriptionid" required><br><br>
+        <h3>Dispense Drugs</h3>
+        <!-- Dispense form -->
+     
+        <h3>View Prescriptions</h3>
+        <!-- View Prescriptions Table -->
 
-            <label for="description">Description:</label>
-            <input type="text" id="description" name="description" required><br><br>
-
-            <label for="patient_ssn">Patient Ssn:</label>
-            <input type="text" id="patient_ssn" name="patient_ssn" required><br><br>
-
-            <label for="doctorssn">Doctor Ssn:</label>
-            <input type="text" id="doctorssn" name="doctorssn" required><br><br>
-
-            <input type="submit" value="Prescribe Drugs">
-        </form>
+        <h3>View History Of drugs Dispensed</h3>
+        <!--View History of drugs Dispensed-->
 
         <a href="logout.php">Logout</a>
     </div>

@@ -4,16 +4,16 @@
 require_once("C:\\xampp\\htdocs\\phplearning\\config\\conection.php");
 
 // Retrieve the SSN parameter from the URL
-$ssn = $_GET['Trade_Name'];
+$ssn = $_GET['Drug_Name'];
 
 // Retrieve the record based on the provided SSN
-$query = "SELECT * FROM drugs WHERE Trade_Name='$trade_name'";
+$query = "SELECT * FROM drugs WHERE Drug_Name='$drug_name'";
 $result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0) {
     // Record found, retrieve the data
     $row = mysqli_fetch_assoc($result);
-    $trade_name = $row['Trade_Name'];
+    $drug_name = $row['Drug_Name'];
     $formula = $row['formula'];
     $price = $row['price'];
     $quantity = $row['Quantity'];
@@ -43,7 +43,7 @@ mysqli_close($conn);
     <div class="container">
         <h2>Edit Drugs</h2>
         <form action="updatedrugs.php" method="POST">
-            <input type="hidden" name="drugid" value="<?php echo $trade_name; ?>">
+            <input type="hidden" name="drugname" value="<?php echo $drug_name; ?>">
             <div class="form-group">
                 <label for="formula">Formula Name:</label>
                 <input type="text" class="form-control" id="formulaName" name="formula" value="<?php echo $formula; ?>">

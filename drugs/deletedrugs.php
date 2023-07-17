@@ -4,10 +4,10 @@
 require_once("C:\\xampp\\htdocs\\phplearning\\config\\conection.php");
 
 // Retrieve the SSN parameter from the URL
-$ssn = $_GET['Trade_Name'];
+$ssn = $_GET['Drug_Name'];
 
 // Perform the delete query based on the retrieved SSN
-$query = "DELETE FROM drugs WHERE Trade_Name='$trade_name'";
+$query = "DELETE FROM drugs WHERE Drug_Name='$drug_name'";
 $result = mysqli_query($conn, $query);
 
 if ($result) {

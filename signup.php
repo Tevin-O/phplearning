@@ -8,8 +8,8 @@
     <div class="container">
         <h2>User Signup</h2>
         <form action="register.php" method="POST">
-            <label for="userssn">User Ssn:</label>
-            <input type="text" id="userssn" name="userssn" required><br><br>
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" required><br><br>
 
             <label for="useremail">Email:</label>
             <input type="email" id="email" name="email" required><br><br>
@@ -23,6 +23,7 @@
                 <option value="patient">Patient</option>
                 <option value="pharmacist">Pharmacist</option>
                 <option value="supervisor">Supervisor</option>
+                <option value="admin">Admin</option>
             </select><br><br>
 
             <input type="submit" value="Signup">

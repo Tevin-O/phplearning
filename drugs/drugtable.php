@@ -25,7 +25,7 @@
                      <div class="card-body">
                         <table class="table table-bordered text-center">
                         <tr class="bg-dark text-white">
-                            <td>Trade Name</td>
+                            <td>Drug Name</td>
                             <td>formula</td>
                             <td>Price</td>
                             <td>Quantity</td>
@@ -39,7 +39,7 @@
                                while ($row = mysqli_fetch_assoc($result))
                                {
                                     ?>
-                                        <td><?php echo $row['Trade_Name'] ?></td>
+                                        <td><?php echo $row['Drug_Name'] ?></td>
                                         <td><?php echo $row['formula'] ?></td>
                                         <td><?php echo $row['price'] ?></td>
                                         <td><?php echo $row['Quantity'] ?></td>

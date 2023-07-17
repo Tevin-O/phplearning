@@ -2,7 +2,7 @@
 session_start(); // Add this line to start the session
 
 // Ensure the user is logged in
-if (!isset($_SESSION['userssn']) || !isset($_SESSION['usertype'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['usertype'])) {
     header("Location: login.php"); // Redirect to the login page if not logged in
     exit();
 }
@@ -16,7 +16,7 @@ if (!isset($_SESSION['userssn']) || !isset($_SESSION['usertype'])) {
 </head>
 <body>
     <div class="container">
-        <h2>Welcome, <?php echo $_SESSION['userssn']; ?> (Patient)</h2>
+        <h2>Welcome, <?php echo $_SESSION['username']; ?> (Patient)</h2>
 
         <h3>Book Appointment</h3>
         <!-- Appointment booking form -->
@@ -29,6 +29,13 @@ if (!isset($_SESSION['userssn']) || !isset($_SESSION['usertype'])) {
             
             <label for="patient_ssn">Patient Ssn:</label>
             <input type="text" id="patient_ssn" name="patient_ssn" required><br><br>
+
+            <label for="patient_name">Patient Name:</label>
+            <input type="text" id="patient_name" name="patient_name" required><br><br>
+
+            <label for="doctor_name">Doctor Name:</label>
+            <input type="text" id="doctor_name" name="doctor_name" required><br><br>
+            
 
             <input type="submit" value="Book Appointment">
         </form>

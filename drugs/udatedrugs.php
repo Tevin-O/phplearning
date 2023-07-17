@@ -3,7 +3,7 @@
 require_once("C:\\xampp\\htdocs\\phplearning\\config\\conection.php");
 // Retrieve the form data
 
-$trade_name = $_POST['tradename'];
+$drug_name = $_POST['drugname'];
 $formula = $_POST['formula'];
 $price = $_POST['price'];
 $quantity = $_POST['quantity'];
@@ -12,7 +12,7 @@ $manufacture_date = $_POST['manufacturedate'];
 $expiry_date = $_POST['expirydate'];
 
 // Perform the update query based on the retrieved form data
-$query = "UPDATE drugs SET Trade_Name='$trade_name', formula='$formula', price='$price', Quantity='$quantity',Company_Name='$company_name' Manufacture_Date='$manufacture_date' Expiry_Date='$expiry_date'  WHERE Trade_Name='$trade_name'";
+$query = "UPDATE drugs SET Drug_Name='$drug_name', formula='$formula', price='$price', Quantity='$quantity',Company_Name='$company_name' Manufacture_Date='$manufacture_date' Expiry_Date='$expiry_date'  WHERE Drug_Name='$drug_name'";
 $result = mysqli_query($conn, $query);
 
 if ($result) {
