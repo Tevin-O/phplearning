@@ -3,11 +3,11 @@
 
 require_once("C:\\xampp\\htdocs\\phplearning\\config\\conection.php");
 
-// Retrieve the SSN parameter from the URL
-$ssn = $_GET['Drug_Name'];
+// Retrieve the record based on the Drug_Name parameter
+$drug_name = $_GET['Drug_Name'];
 
-// Retrieve the record based on the provided SSN
-$query = "SELECT * FROM drugs WHERE Drug_Name='$drug_name'";
+// Retrieve the record from the database
+$query = "SELECT * FROM drugs WHERE Drug_Name = '$drug_name'";
 $result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0) {
@@ -20,7 +20,6 @@ if (mysqli_num_rows($result) > 0) {
     $company_name = $row['Company_Name'];
     $manufacture_date = $row['Manufacture_Date'];
     $expiry_date = $row['Expiry_Date'];
-
 } else {
     // Handle the case where the record was not found
     echo "Record not found.";
