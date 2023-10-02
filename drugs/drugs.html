@@ -2,16 +2,18 @@
 <html>
    <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration Form</title>
-   <link rel="stylesheet" type="text/css" href="drugs.css">
+    <link rel="stylesheet" type="text/css" href="drugs.css">
    </head> 
    <body>
     <div class="registration-form">
         <h1>Drug Registration</h1>
-        <form action="adddrugs.php" method="post">
+        <form action="adddrugs.php" method="post" enctype="multipart/form-data">
              <p>Drug Name</p>
              <input type="text" name="drugname" placeholder="DrugName">
+             <p>Drug Category</p>
+             <input type="text" name="drugcategory" placeholder="DrugCategory">
              <p>Formula</p>
              <input type="text" name="formula" placeholder="Formula">
              <p>Price</p>
@@ -24,6 +26,8 @@
              <input type="date" name="manufacturedate" placeholder="ManufactureDate">
              <p>Expiry Date</p>
              <input type="date" name="expirydate" placeholder="ExpiryDate">
+             <p>Drug Image</p>
+             <input type="file" name="drugimage">
              <button type="submit">Register</button>
         </form>
     </div>

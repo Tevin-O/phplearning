@@ -16,3 +16,28 @@ input[type="text"], input[type="password"], select {
     padding: 5px;
     margin-bottom: 10px;
 }
+
+
+.success-message {
+    background-color: #aee4b0; /* Green background color */
+    color: rgb(21, 19, 19); /* White text color */
+    padding: 10px; /* Padding around the message */
+    text-align: center; /* Center-align the text */
+    position: fixed; /* Fixed position so it appears at the top of the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999; /* Ensure it's above other content */
+    display: none; /* Initially hidden */
+    transition: all 0.3s ease-in-out; /* Smooth fade-in and fade-out effect */
+}
+
+/* Style for the close button (optional) */
+.success-message-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
